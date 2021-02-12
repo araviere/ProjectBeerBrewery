@@ -17,10 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGrounded;
 
-
     Vector3 velocity;
-    
-    
+
     void Update()
     {
         Walk();
