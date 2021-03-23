@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && Time.timeScale == 1f)
         {
             if (InventoryOpen)
             {

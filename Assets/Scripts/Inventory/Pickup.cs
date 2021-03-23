@@ -15,11 +15,10 @@ public class Pickup : MonoBehaviour
         objectImage.enabled = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void PickUp(GameObject player)
     {
-        if (other.CompareTag("Player"))
-        {
             objectImage.enabled = true;
+
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if(inventory.isFull[i] == false)
@@ -34,6 +33,6 @@ public class Pickup : MonoBehaviour
                     break;
                 }
             }
-        }
-    }
+     }
 }
+

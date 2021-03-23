@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform groundCheck;
+
+    private RaycastHit vision;
+    public Camera camera;
+    public Text text;
 
     public float speed = 5f;
     public float sprintSpeed = 8f;

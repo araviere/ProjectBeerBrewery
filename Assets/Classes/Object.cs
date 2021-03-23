@@ -2,10 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Object : MonoBehaviour
-{
-    public string name;
 
+[CreateAssetMenu]
+public class Object : ScriptableObject
+{     
+    public string name;    
 
     public string GetName() { return name; }
+
+    public virtual string WhatYouCanDoWith()
+    {
+        return name;
+    }
+
+    public virtual void InteractWith(GameObject player)
+    {
+
+    }
 }
