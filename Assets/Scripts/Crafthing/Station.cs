@@ -2,34 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Station : Object
+public class Station : MonoBehaviour
 {
     private IngredientObject ingredient;
-    private int procesTime;
-    private int procesTimeRunned = 0;
-    public override string WhatYouCanDoWith()
-    {
-        return "open " + name + " with";
-    }
-    public override void InteractWith(GameObject player)
-    {
-        base.InteractWith(player);
-    }
+    public float procesTime;
+      
     public void Input(IngredientObject objectItem)
     {
         ingredient = objectItem;
         procesTime = objectItem.procesTime;
+        Proces();
     }
-
     public virtual void Proces()
     {
-        if(procesTimeRunned < procesTime)
-        {
-            procesTimeRunned++;
-        }
-        else if (procesTimeRunned == procesTime)
-        {
-            procesTimeRunned = 0;
-        }
+        ItemTimer();
     }
-}
+    private IEnumerator ItemTimer()
+    {
+        float procesTimeRunned = 0;
+        while (procesTimeRunned <= procesTime)
+        {
+            procesTimeRunned = Time.deltaTime;
+            Debug.Log(procesTimeRunned);
+        }
+        return null;
+    }
+    }
