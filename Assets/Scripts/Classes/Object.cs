@@ -8,4 +8,9 @@ public class Object : MonoBehaviour
 
 
     public string GetName() { return name; }
+
+    public virtual void InteractWith()
+    {
+
+    }
 }

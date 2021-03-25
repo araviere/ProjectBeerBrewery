@@ -31,7 +31,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.967, z: 0}
   m_LocalScale: {x: 0.55359, y: 0.55359, z: 0.55359}
   m_Children:
-  - {fileID: 8908284959278728996}
   - {fileID: 8908284959026465759}
   - {fileID: 8908284957831224174}
   m_Father: {fileID: 0}
@@ -112,7 +111,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  inventoryMenuUI: {fileID: 0}
+  inventorySize: 21
+  panel: {fileID: 0}
+  UISlot: {fileID: 3271844940050121615, guid: 51ed954858b47a64b99a9fdb46b70042, type: 3}
+  inventoryMenuUI: {fileID: 8795450095058239957, guid: 92c2967933a35ed46ba370222205dded, type: 3}
 --- !u!1 &8908284957831224175
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8908284957657979336}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8908284958574929929
 GameObject:
@@ -251,7 +253,7 @@ RectTransform:
   - {fileID: 8908284958574929928}
   - {fileID: 8908284959489007799}
   m_Father: {fileID: 8908284957657979336}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -319,104 +321,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &8908284959278728997
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8908284959278728996}
-  - component: {fileID: 8908284959278729001}
-  - component: {fileID: 8908284959278729002}
-  - component: {fileID: 8908284959278729003}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8908284959278728996
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8908284959278728997}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.921, z: -0.263}
-  m_LocalScale: {x: 1.8063911, y: 1.8063911, z: 1.8063911}
-  m_Children: []
-  m_Father: {fileID: 8908284957657979336}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &8908284959278729001
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8908284959278728997}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!81 &8908284959278729002
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8908284959278728997}
-  m_Enabled: 1
---- !u!114 &8908284959278729003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8908284959278728997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245f97b7b0b605b48aec54d146b8db82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSensitifity: 500
-  playerBody: {fileID: 8908284957657979336}
 --- !u!1 &8908284959489007792
 GameObject:
   m_ObjectHideFlags: 0
