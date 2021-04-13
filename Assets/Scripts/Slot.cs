@@ -20,10 +20,7 @@ public class Slot : MonoBehaviour, IDropHandler
             inventory.isFull[i] = false;
         }
     }
-    public void DropItem()
-    {
-        this.GetComponentInChildren<Spawn>().SpawnDroppedItem();
-    }
+    
 
 
     public virtual void InterectactWithSlot()
@@ -37,6 +34,8 @@ public class Slot : MonoBehaviour, IDropHandler
         if(eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = slot.GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<DragAndDrop>().droppedOnSlot = true;
+
         }
     }
 }
