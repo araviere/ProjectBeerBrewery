@@ -6,33 +6,36 @@ using UnityEngine.UI;
 public class Pickup : MonoBehaviour
 {
     Inventory inventory;
-    public GameObject objectButton;
+    //public GameObject objectButton;
     public Image objectImage;
 
-    private void Start()
+    void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        inventory = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Inventory>();
         objectImage.enabled = false;
     }
 
-    public void PickUp(GameObject player)
+    void OnTriggerEnter(Collider other)
     {
-            objectImage.enabled = true;
-
+        if (other.CompareTag("Player"))
+        {
+            
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if(inventory.isFull[i] == false)
                 {
                     // Add item to inventory
+                    objectImage.enabled = true;
                     inventory.isFull[i] = true;
-                    Instantiate(objectButton, inventory.slots[i].transform, false);
+                    //Instantiate(objectButton, inventory.slots[i].transform, false);
                     Instantiate(objectImage, inventory.slots[i].transform, false);
                     
+
                     Destroy(gameObject);
                     Debug.Log(inventory);
                     break;
                 }
             }
-     }
+        }
+    }
 }
-
