@@ -6,10 +6,10 @@ using UnityEngine;
 [CreateAssetMenu]
 public class IngredientObject : StackebleObjects
 {
-    public Object suckesfullCreatedOutput;
+    public GameObject suckesfullCreatedOutput;
     public int procesTime;
 
-    public override void InteractWith(GameObject player)
+    public override void InteractWith()
     {
     }
 

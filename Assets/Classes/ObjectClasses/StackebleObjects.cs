@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [CreateAssetMenu]
 public class StackebleObjects : Object
 {
-    private int stackAmount = 1;
+    public int stackAmount = 1;
+    public Text amountText;
+
+    private void Awake()
+    {
+        SetStack(0);
+    }
 
     public int GetStackAmount()
     {
         return stackAmount;
     }
-    public override string WhatYouCanDoWith()
-    {
-
-        return "pick up " + GetStackAmount() + " " + name;
-
-    }
 
     public void SetStack(int amount)
     {
-        stackAmount += amount;
+       amountText.text = ((stackAmount += amount).ToString() + "x");
     }
 }
