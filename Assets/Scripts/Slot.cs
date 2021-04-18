@@ -8,37 +8,26 @@ public class Slot : MonoBehaviour, IDropHandler
     public Object itemInSlot;
     public Inventory inventory;
     public int i;
-
-    void Start()
-    {
-        inventory = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Inventory>();
-    }
-    void Update()
-    {
-        if (transform.childCount <= 0)
-        {
-            inventory.isFull[i] = false;
-        }
-    }
     
 
 
     public virtual bool InterectactWithSlot(Object ingredient)
     {
         Debug.Log(itemInSlot == null || itemInSlot.GetComponent<StackebleObjects>().name == ingredient.name);
-        if (itemInSlot ==  null|| itemInSlot.GetComponent<StackebleObjects>().name == ingredient.name)
-        {
+
             try
             {
                 Debug.Log(itemInSlot.GetComponent<StackebleObjects>().name == ingredient.name? true : false);
-                if(itemInSlot.GetComponent<StackebleObjects>().name == ingredient.name)
+                if(itemInSlot.GetComponent<StackebleObjects>().name == ingredient.name && itemInSlot != ingredient)
                 {
-                    itemInSlot.GetComponent<StackebleObjects>().SetStack(ingredient.GetComponent<StackebleObjects>().GetStackAmount());
-                    Destroy(ingredient);
+                    itemInSlot.GetComponent<StackebleObjects>().SetStack(ingredient.GetComponent<StackebleObjects>().GetStackAmount()); 
+
+                Destroy(ingredient.gameObject);
                 }
                 else
                 {
                     itemInSlot = ingredient;
+                    
                 }
             }
             catch
@@ -47,9 +36,7 @@ public class Slot : MonoBehaviour, IDropHandler
             }
             itemInSlot = ingredient;
             return true;
-        }
-        else
-            return false;
+
     }
 
     public virtual void OnDrop(PointerEventData eventData)

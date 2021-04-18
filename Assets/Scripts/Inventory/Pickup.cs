@@ -9,12 +9,6 @@ public class Pickup : MonoBehaviour
     public GameObject objectButton;
     public Image objectImage;
 
-    private void Start()
-    {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        objectImage.enabled = false;
-    }
-
     public void PickUp(GameObject player)
     {
             objectImage.enabled = true;

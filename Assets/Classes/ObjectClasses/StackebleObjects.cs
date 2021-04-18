@@ -22,6 +22,8 @@ public class StackebleObjects : Object
 
     public void SetStack(int amount)
     {
-       amountText.text = ((stackAmount += amount).ToString() + "x");
+
+        Debug.Log(1);
+        amountText.text = ((stackAmount += amount).ToString() + "x");
     }
 }

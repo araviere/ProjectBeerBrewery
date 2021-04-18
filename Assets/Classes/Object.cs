@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu]
-public class Object : ScriptableObject
+public class Object : MonoBehaviour
 {     
     public string name;    
 
@@ -15,7 +15,7 @@ public class Object : ScriptableObject
         return name;
     }
 
-    public virtual void InteractWith(GameObject player)
+    public virtual void InteractWith()
     {
 
     }

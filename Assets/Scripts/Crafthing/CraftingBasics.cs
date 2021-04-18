@@ -7,24 +7,22 @@ public class CraftingBasics : MonoBehaviour
 {
     private IngredientObject ingredient;
     public OutputSlot output;
+    public InputSlot input;
     public float procesTime;
     public Image timerCyrcel;
     public Text timerText;
 
     float procesTimeRunned = 0;
 
-    public bool Input(IngredientObject objectItem)
+    public bool Input(Object objectItem)
     {
-        Debug.Log(output.itemInSlot.name == ingredient.suckesfullCreatedOutput.name || output.itemInSlot == null  ? true : false);
-        if (output.itemInSlot.name == ingredient.suckesfullCreatedOutput.name || output.itemInSlot == null)
-        {
-            ingredient = objectItem;
-            procesTime = objectItem.procesTime;
+        //Debug.Log(output.itemInSlot.name == ingredient.suckesfullCreatedOutput.name || output.itemInSlot == null  ? true : false);
+
+
+            ingredient = objectItem.GetComponent<IngredientObject>();
+            procesTime = objectItem.GetComponent<IngredientObject>().procesTime;
             Proces();
             return true;
-        }
-        else
-            return false;
     }
     public virtual void Proces()
     {
@@ -38,8 +36,6 @@ public class CraftingBasics : MonoBehaviour
         {
             procesTimeRunned += Time.deltaTime;
             Timer((int)(procesTime - procesTimeRunned));
-
-            Debug.Log("a");
 
 
             yield return new WaitForSeconds(Time.deltaTime);
@@ -64,10 +60,14 @@ public class CraftingBasics : MonoBehaviour
     {
         if (output.itemInSlot == null)
         {
-            Instantiate(ingredient.suckesfullCreatedOutput, output.transform.position, output.transform.rotation, transform.parent = GameObject.Find("InteractWithUI").transform);
+            Debug.Log(1);
+            GameObject obj = Instantiate(ingredient.suckesfullCreatedOutput, output.transform.position, output.transform.rotation, transform.parent = GameObject.Find("InteractWithUI").transform);
+            obj.GetComponent<StackebleObjects>().SetStack(ingredient.GetStackAmount());
+            Destroy(input.itemInSlot);
         }
         else if(output.itemInSlot == ingredient.suckesfullCreatedOutput)
         {
+            Debug.Log(1);
             output.itemInSlot.GetComponent<StackebleObjects>().SetStack(ingredient.GetStackAmount());
         }
     }

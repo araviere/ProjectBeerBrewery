@@ -8,4 +8,5 @@ public class InventorySlot : Slot
     {
         return true;
     }
+
 }
