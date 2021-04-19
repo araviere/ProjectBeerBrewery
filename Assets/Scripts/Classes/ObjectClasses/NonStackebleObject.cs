@@ -8,12 +8,8 @@ public class NonStackebleObject : Object
 {
     public Pickup pickUp;
 
-    public override string WhatYouCanDoWith()
+    public override void InteractWith()
     {
-        return " pick up " + name;
-    }
-    public override void InteractWith(GameObject player)
-    {
-        pickUp.PickUp(player);
+        
     }
 }

@@ -12,12 +12,7 @@ public class StackebleObjects : Object
     {
         return stackAmount;
     }
-    public override string WhatYouCanDoWith()
-    {
 
-        return "pick up " + GetStackAmount() + " " + name;
-
-    }
 
     public void SetStack(int amount)
     {
