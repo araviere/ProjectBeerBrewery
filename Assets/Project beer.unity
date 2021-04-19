@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051496a4a0d0f4c49875f470f20d4ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoPanels:
+  infoPanel:
   - {fileID: 718037442}
   - {fileID: 1500967279}
   - {fileID: 1929854480}
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051496a4a0d0f4c49875f470f20d4ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoPanels:
+  infoPanel:
   - {fileID: 1383886405}
   - {fileID: 1500967279}
   - {fileID: 1929854480}
@@ -1617,7 +1617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051496a4a0d0f4c49875f470f20d4ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoPanels:
+  infoPanel:
   - {fileID: 1383886405}
   - {fileID: 718037442}
   - {fileID: 1929854480}
@@ -1970,8 +1970,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.03, y: 28.001}
-  m_SizeDelta: {x: 724.4468, y: 842.949}
+  m_AnchoredPosition: {x: -7.6262, y: 28.001}
+  m_SizeDelta: {x: 715.6392, y: 842.949}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662281519
 MonoBehaviour:
@@ -3482,7 +3482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051496a4a0d0f4c49875f470f20d4ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoPanels:
+  infoPanel:
   - {fileID: 1383886405}
   - {fileID: 718037442}
   - {fileID: 1500967279}
@@ -3946,7 +3946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051496a4a0d0f4c49875f470f20d4ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoPanels:
+  infoPanel:
   - {fileID: 1383886405}
   - {fileID: 718037442}
   - {fileID: 1500967279}
