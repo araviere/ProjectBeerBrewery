@@ -60,14 +60,11 @@ public class CraftingBasics : MonoBehaviour
     {
         if (output.itemInSlot == null)
         {
-            Debug.Log(1);
             GameObject obj = Instantiate(ingredient.suckesfullCreatedOutput, output.transform.position, output.transform.rotation, transform.parent = GameObject.Find("InteractWithUI").transform);
-            obj.GetComponent<StackebleObjects>().SetStack(ingredient.GetStackAmount());
-            Destroy(input.itemInSlot);
+            Destroy(input.itemInSlot.gameObject);
         }
         else if(output.itemInSlot == ingredient.suckesfullCreatedOutput)
         {
-            Debug.Log(1);
             output.itemInSlot.GetComponent<StackebleObjects>().SetStack(ingredient.GetStackAmount());
         }
     }

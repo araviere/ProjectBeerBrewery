@@ -26,17 +26,14 @@ public class Slot : MonoBehaviour, IDropHandler
                 }
                 else
                 {
-                    itemInSlot = ingredient;
-                    
+                    itemInSlot = ingredient;                    
                 }
             }
             catch
             {
                 itemInSlot = ingredient;
             }
-            itemInSlot = ingredient;
             return true;
-
     }
 
     public virtual void OnDrop(PointerEventData eventData)
